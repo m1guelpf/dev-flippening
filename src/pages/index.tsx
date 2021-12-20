@@ -1,15 +1,21 @@
 import { FC } from 'react'
-import * as timeago from 'timeago.js'
+import TimeAgo from 'react-timeago'
 
-const Index: FC<{ alexFollows: number; miguelFollows: number; lastUpdated: number }> = ({
+const Index: FC<{ alexFollows: number; miguelFollows: number; lastUpdate: number }> = ({
 	alexFollows,
 	miguelFollows,
-	lastUpdated,
+	lastUpdate,
 }) => {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen">
 			<h1 className="text-[25vw] font-bold text-black font-mono">{alexFollows - miguelFollows}</h1>
-			<p>last updated {timeago.format(lastUpdated)}</p>
+			<p>
+				last updated <TimeAgo date={lastUpdate} />. follow{' '}
+				<a className="underline" href="https://twitter.com/m1guelpf" target="_blank" rel="noreferrer">
+					@m1guelpf
+				</a>{' '}
+				to make numba go down.
+			</p>
 		</div>
 	)
 }
