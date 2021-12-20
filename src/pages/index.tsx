@@ -9,7 +9,7 @@ const Index: FC<{ alexFollows: number; miguelFollows: number; lastUpdate: number
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen">
 			<h1 className="text-[25vw] font-bold text-black font-mono">{alexFollows - miguelFollows}</h1>
-			<p>
+			<p className="text-center">
 				last updated <TimeAgo date={lastUpdate} />. follow{' '}
 				<a className="underline" href="https://twitter.com/m1guelpf" target="_blank" rel="noreferrer">
 					@m1guelpf
